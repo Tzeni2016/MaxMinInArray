@@ -10,8 +10,8 @@ private:
     int size;
 public:
     ElementStore(X *, int);
-    void getMax();
-    void getMin();
+    void printMaxFreq();
+    void printMinFreq();
 };
 
 template<typename X>
@@ -23,7 +23,7 @@ ElementStore<X>::ElementStore(X *a, int n){
     }
 }
 template<typename X>
-void ElementStore<X>::getMax(){
+void ElementStore<X>::printMaxFreq(){
     X max = arr[0];
     int count = 0;
 
@@ -42,7 +42,7 @@ void ElementStore<X>::getMax(){
         cout<<" times."<<endl;
 }
 template<typename X>
-void ElementStore<X>::getMin(){
+void ElementStore<X>::printMinFreq(){
     X min = arr[0];
     int count=0;
 
@@ -96,14 +96,14 @@ int main() {
 	c = new ElementStore<string>(C,n);
 	delete[] C;
 
-	a->getMin();
-	a->getMax();
+	a->printMinFreq();
+    	a->printMaxFreq();
+    	cout<<endl;
+	b->printMinFreq();
+	b->printMaxFreq();
 	cout<<endl;
-	b->getMin();
-	b->getMax();
-	cout<<endl;
-	c->getMin();
-	c->getMax();
+	c->printMinFreq();
+	c->printMaxFreq();
 
 	return 0;
 }
